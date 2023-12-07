@@ -1,7 +1,7 @@
 <template>
   <li class="header__navbar__item">
-    <a
-      href="phone.html#phone"
+    <router-link
+      :to="dynamicLink"
       @click="handleSubnav"
       class="header__navbar__link"
       ><span>
@@ -13,10 +13,10 @@
           class="fa-solid fa-minus"
           v-if="isPhoneScreen && openSubnav"
         ></i></div
-    ></a>
+    ></router-link>
     <div
       class="header__navbar__subnav__box"
-      :style="{ height: heightSubnav + 'px' }"
+      :style="{ height: isPhoneScreen ? heightSubnav : '' + 'px' }"
     >
       <ul class="header__navbar__item__subnav">
         <slot name="subnav"></slot>
@@ -28,12 +28,24 @@
 <script>
 import { ref, computed } from "vue";
 export default {
+  props: ["slots"],
   setup(props, { emit }) {
     const openSubnav = ref(false);
     const heightSubnav = ref(0);
     let isPhoneScreen = computed(() =>
       window.innerWidth <= 768 ? true : false
     );
+
+    const dynamicLink = computed(() => {
+      if (props.slots == "Điện thoại") {
+        return "/phone";
+      } else if (props.slots == "Nhà thông minh") {
+        return "/smart-house";
+      } else if (props.slots == "Phong cách sống") {
+        return "/style-life";
+      }
+      return "";
+    });
 
     function handleSubnav(e) {
       if (window.innerWidth <= 768) {
@@ -70,6 +82,7 @@ export default {
       heightSubnav,
       handleSubnav,
       isPhoneScreen,
+      dynamicLink,
     };
   },
 };

@@ -10,9 +10,7 @@
       <p class="product__item__desc">
         <slot name="desc2"></slot>
       </p>
-      <a href="#!" class="xiaomi__btn__noboder">
-        TÌM HIỂU THÊM <i class="fa-solid fa-angle-right"></i>
-      </a>
+      <button-no-border></button-no-border>
     </div>
     <slot name="image"></slot>
   </div>

@@ -1,15 +1,15 @@
 <template>
   <header>
     <div class="header__logo">
-      <a href="#!">
+      <router-link to="/">
         <span><i class="fa-solid fa-house"></i></span>
         <img src="../assets/images/header/xiaomi.svg" alt="logo" />
-      </a>
+      </router-link>
     </div>
     <div class="header__box" :class="{ show: isShow }">
       <ul class="header__navbar">
-        <header-navbar-mi>
-          <template #name>Điện thoại</template>
+        <header-navbar-mi :slots="phone">
+          <template #name>{{ phone }}</template>
           <template #subnav>
             <header-subnav-mi>
               <template #name>
@@ -34,8 +34,8 @@
             </header-subnav-mi>
           </template>
         </header-navbar-mi>
-        <header-navbar-mi>
-          <template #name>Nhà thông minh</template>
+        <header-navbar-mi :slots="home">
+          <template #name>{{ home }}</template>
           <template #subnav>
             <header-subnav-mi>
               <template #image><i class="fa-solid fa-tv"></i></template>
@@ -219,8 +219,8 @@
             </header-subnav-mi>
           </template>
         </header-navbar-mi>
-        <header-navbar-mi>
-          <template #name>Phong cách sống</template>
+        <header-navbar-mi :slots="style">
+          <template #name>{{ style }}</template>
           <template #subnav>
             <header-subnav-mi>
               <template #image
@@ -505,6 +505,9 @@ export default {
   setup() {
     const isShow = ref(false);
     const changeIcon = ref(false);
+    const phone = ref("Điện thoại");
+    const home = ref("Nhà thông minh");
+    const style = ref("Phong cách sống");
 
     function handleMenu() {
       handleHeaderBox();
@@ -515,7 +518,7 @@ export default {
       changeIcon.value = !changeIcon.value;
     }
 
-    return { handleMenu, isShow, changeIcon };
+    return { handleMenu, isShow, changeIcon, phone, home, style };
   },
 };
 </script>

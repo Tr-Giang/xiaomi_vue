@@ -1,6 +1,6 @@
 <template>
   <li class="header__navbar__item__subnav__item">
-    <a href="phone.html#xiaomi">
+    <a href="/phone#redmi">
       <slot name="image"></slot>
       <slot name="name"></slot
     ></a>
