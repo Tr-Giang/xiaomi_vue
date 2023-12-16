@@ -8,24 +8,24 @@
     </div>
     <div class="header__box" :class="{ show: isShow }">
       <ul class="header__navbar">
-        <header-navbar-mi :slots="phone">
+        <header-navbar-mi :nav="phone">
           <template #name>{{ phone }}</template>
           <template #subnav>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="phoneNav[0]">
               <template #name>
                 <span class="header__navbar__item__subnav__item__phone"
                   >Xiaomi
                 </span>
               </template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="phoneNav[1]">
               <template #name>
                 <span class="header__navbar__item__subnav__item__phone"
                   >Redmi
                 </span></template
               >
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="phoneNav[2]">
               <template #name>
                 <span class="header__navbar__item__subnav__item__phone"
                   >POCO
@@ -34,14 +34,14 @@
             </header-subnav-mi>
           </template>
         </header-navbar-mi>
-        <header-navbar-mi :slots="home">
+        <header-navbar-mi :nav="home">
           <template #name>{{ home }}</template>
           <template #subnav>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="homeNav[0]">
               <template #image><i class="fa-solid fa-tv"></i></template>
               <template #name> <span>TV & Phương tiện</span></template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="homeNav[1]">
               <template #image
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
               ></template>
               <template #name><span>Máy hút bụi</span></template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="homeNav[2]">
               <template #image
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@
                 <span>Thiết bị môi trường</span>
               </template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="homeNav[3]">
               <template #image
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -219,10 +219,10 @@
             </header-subnav-mi>
           </template>
         </header-navbar-mi>
-        <header-navbar-mi :slots="style">
+        <header-navbar-mi :nav="style">
           <template #name>{{ style }}</template>
           <template #subnav>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="styleNav[0]">
               <template #image
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -259,7 +259,7 @@
               </template>
               <template #name><span>Thiết bị đeo</span></template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="styleNav[1]">
               <template #image>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +274,7 @@
               </template>
               <template #name><span>Văn phòng</span></template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="styleNav[2]">
               <template #image>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -377,7 +377,7 @@
               </template>
               <template #name><span>Thể thao</span></template>
             </header-subnav-mi>
-            <header-subnav-mi>
+            <header-subnav-mi :subNav="styleNav[3]">
               <template #image>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -490,7 +490,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import HeaderNavbarMi from "./headerComponents/HeaderNavbarMi";
 import HeaderSubnavMi from "./headerComponents/HeaderSubnavMi";
 import HeaderResponMi from "./headerComponents/HeaderResponMi";
@@ -508,6 +508,19 @@ export default {
     const phone = ref("Điện thoại");
     const home = ref("Nhà thông minh");
     const style = ref("Phong cách sống");
+    const phoneNav = reactive(["Xiaomi", "Redmi", "POCO"]);
+    const homeNav = reactive([
+      "TV & Phương tiện",
+      "Máy hút bụi",
+      "Thiết bị môi trường",
+      "Thiết bị thông minh",
+    ]);
+    const styleNav = reactive([
+      "Thiết bị đeo",
+      "Văn phòng",
+      "Thể thao",
+      "Phụ kiện",
+    ]);
 
     function handleMenu() {
       handleHeaderBox();
@@ -518,7 +531,17 @@ export default {
       changeIcon.value = !changeIcon.value;
     }
 
-    return { handleMenu, isShow, changeIcon, phone, home, style };
+    return {
+      handleMenu,
+      isShow,
+      changeIcon,
+      phone,
+      home,
+      style,
+      phoneNav,
+      homeNav,
+      styleNav,
+    };
   },
 };
 </script>

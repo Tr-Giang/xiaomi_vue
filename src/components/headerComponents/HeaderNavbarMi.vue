@@ -28,7 +28,7 @@
 <script>
 import { ref, computed } from "vue";
 export default {
-  props: ["slots"],
+  props: ["nav"],
   setup(props, { emit }) {
     const openSubnav = ref(false);
     const heightSubnav = ref(0);
@@ -37,11 +37,11 @@ export default {
     );
 
     const dynamicLink = computed(() => {
-      if (props.slots == "Điện thoại") {
+      if (props.nav == "Điện thoại") {
         return "/phone";
-      } else if (props.slots == "Nhà thông minh") {
+      } else if (props.nav == "Nhà thông minh") {
         return "/smart-house";
-      } else if (props.slots == "Phong cách sống") {
+      } else if (props.nav == "Phong cách sống") {
         return "/style-life";
       }
       return "";
