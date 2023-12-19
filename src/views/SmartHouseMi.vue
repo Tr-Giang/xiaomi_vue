@@ -2,6 +2,77 @@
   <div id="all">
     <div class="container-fluid">
       <main>
+        <carousel-mi>
+          <template #banner1>
+            <banner-text-mi-dark
+              :customStyle="{ textAlign: 'left' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/smart_home/banner/banner1.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/smart_home/banner/banner11.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>Xiaomi Robot Vacuum E10</template>
+              <template #desc>Chuyên gia vệ sinh sàn linh hoạt</template>
+            </banner-text-mi-dark>
+          </template>
+          <template #banner2>
+            <banner-text-mi-dark
+              :customStyle="{ textAlign: 'left' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/smart_home/banner/banner2.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/smart_home/banner/banner21.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>Xiaomi TV A 55</template>
+              <template #desc>Muôn Góc Nhìn, Vạn Trải Nghiệm</template>
+            </banner-text-mi-dark>
+          </template>
+          <template #banner3>
+            <banner-text-mi
+              :customStyle="{ textAlign: 'left', fontSize: '2rem' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/smart_home/banner/banner3.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/smart_home/banner/banner31.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>Xiaomi Smart Air Purifier 4 Compact</template>
+              <template #desc>Mang không khí sạch đến nơi bạn cần</template>
+            </banner-text-mi>
+          </template>
+        </carousel-mi>
         <main-show-mi id="media">
           <template #header>
             <main-show-header>
@@ -329,4 +400,8 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.banner__item__content {
+  text-align: left;
+}
+</style>

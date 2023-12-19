@@ -18,9 +18,11 @@
 </template>
 
 <script>
+import { useHeaderStore } from "@/stores/HeaderStore";
 import { ref, computed } from "vue";
 export default {
-  setup(props, { emit }) {
+  setup() {
+    const store = useHeaderStore();
     const openRespon = ref(false);
     const heightRespon = ref(0);
     let isPhoneScreen = computed(() =>
@@ -56,13 +58,12 @@ export default {
       }
     }
 
-    emit("handleRespon", openRespon, heightRespon);
-
     return {
       openRespon,
       heightRespon,
       handleRespon,
       isPhoneScreen,
+      store,
     };
   },
 };

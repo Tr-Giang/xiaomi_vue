@@ -1,5 +1,9 @@
 <template>
-  <li class="header__navbar__item">
+  <li
+    class="header__navbar__item"
+    @mouseover="store.openOverlay"
+    @mouseout="store.closeOverlay"
+  >
     <router-link
       :to="dynamicLink"
       @click="handleSubnav"
@@ -8,15 +12,15 @@
         <slot name="name"></slot>
       </span>
       <div>
-        <i class="fa-solid fa-plus" v-if="isPhoneScreen && !openSubnav"></i
+        <i class="fa-solid fa-plus" v-if="store.isPhone && !openSubnav"></i
         ><i
           class="fa-solid fa-minus"
-          v-if="isPhoneScreen && openSubnav"
+          v-if="store.isPhone && openSubnav"
         ></i></div
     ></router-link>
     <div
       class="header__navbar__subnav__box"
-      :style="{ height: isPhoneScreen ? heightSubnav : '' + 'px' }"
+      :style="{ height: store.isPhone ? `${heightSubnav}px` : '' }"
     >
       <ul class="header__navbar__item__subnav">
         <slot name="subnav"></slot>
@@ -26,15 +30,14 @@
 </template>
 
 <script>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
+import { useHeaderStore } from "@/stores/HeaderStore";
 export default {
   props: ["nav"],
-  setup(props, { emit }) {
+  setup(props) {
+    const store = useHeaderStore();
     const openSubnav = ref(false);
     const heightSubnav = ref(0);
-    let isPhoneScreen = computed(() =>
-      window.innerWidth <= 768 ? true : false
-    );
 
     const dynamicLink = computed(() => {
       if (props.nav == "Điện thoại") {
@@ -48,7 +51,7 @@ export default {
     });
 
     function handleSubnav(e) {
-      if (window.innerWidth <= 768) {
+      if (store.isPhone) {
         e.stopPropagation();
         e.preventDefault();
         openSubnav.value = !openSubnav.value;
@@ -74,15 +77,22 @@ export default {
         }
       }
     }
-
-    emit("handleSubnav", openSubnav, heightSubnav);
+    watch(
+      () => store.isShowNav,
+      (newValue) => {
+        if (!newValue) {
+          openSubnav.value = false;
+          heightSubnav.value = 0;
+        }
+      }
+    );
 
     return {
       openSubnav,
       heightSubnav,
       handleSubnav,
-      isPhoneScreen,
       dynamicLink,
+      store,
     };
   },
 };

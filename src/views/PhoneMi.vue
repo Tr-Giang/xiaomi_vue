@@ -110,7 +110,7 @@
               </template>
               <template #image2>
                 <img
-                  src="../assets/images/home/banner/introductionPOCOmodbile.webp"
+                  src="../assets/images/phone/phone_redmi/banner2.webp"
                   alt="POCO f5 pro"
                   class="d-block d-md-none"
                 />

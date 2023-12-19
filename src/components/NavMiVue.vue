@@ -6,7 +6,7 @@
         <img src="../assets/images/header/xiaomi.svg" alt="logo" />
       </router-link>
     </div>
-    <div class="header__box" :class="{ show: isShow }">
+    <div class="header__box" :class="{ show: store.isShowNav }">
       <ul class="header__navbar">
         <header-navbar-mi :nav="phone">
           <template #name>{{ phone }}</template>
@@ -398,13 +398,21 @@
         </header-navbar-mi>
       </ul>
       <ul class="header__navbar header__other">
-        <li class="header__navbar__item">
+        <li
+          class="header__navbar__item"
+          @mouseover="store.openOverlay"
+          @mouseout="store.closeOverlay"
+        >
           <a href="#!" class="header__navbar__link"
             ><span>HỖ TRỢ</span>
             <div><i class="fa-solid fa-angle-right"></i></div
           ></a>
         </li>
-        <li class="header__navbar__item">
+        <li
+          class="header__navbar__item"
+          @mouseover="store.openOverlay"
+          @mouseout="store.closeOverlay"
+        >
           <a href="#!" class="header__navbar__link sign__up__link">
             <span>
               <i class="fa-regular fa-user"></i>
@@ -483,8 +491,11 @@
       </div>
     </div>
     <button @click="handleMenu" class="header__btn__nav">
-      <i class="fa-solid fa-bars" :class="{ 'display-none': changeIcon }"></i>
-      <i class="fa-solid fa-xmark" :class="{ 'display-none': !changeIcon }"></i>
+      <i class="fa-solid fa-bars" :class="{ 'display-none': store.isIcon }"></i>
+      <i
+        class="fa-solid fa-xmark"
+        :class="{ 'display-none': !store.isIcon }"
+      ></i>
     </button>
   </header>
 </template>
@@ -495,6 +506,7 @@ import HeaderNavbarMi from "./headerComponents/HeaderNavbarMi";
 import HeaderSubnavMi from "./headerComponents/HeaderSubnavMi";
 import HeaderResponMi from "./headerComponents/HeaderResponMi";
 import HeaderResponChild from "./headerComponents/HeaderResponChild";
+import { useHeaderStore } from "@/stores/HeaderStore";
 export default {
   components: {
     HeaderNavbarMi,
@@ -503,8 +515,7 @@ export default {
     HeaderResponChild,
   },
   setup() {
-    const isShow = ref(false);
-    const changeIcon = ref(false);
+    const store = useHeaderStore();
     const phone = ref("Điện thoại");
     const home = ref("Nhà thông minh");
     const style = ref("Phong cách sống");
@@ -527,26 +538,28 @@ export default {
     }
 
     function handleHeaderBox() {
-      isShow.value = !isShow.value;
-      changeIcon.value = !changeIcon.value;
+      store.isShowNav = !store.isShowNav;
+      store.isIcon = !store.isIcon;
     }
 
     return {
       handleMenu,
-      isShow,
-      changeIcon,
       phone,
       home,
       style,
       phoneNav,
       homeNav,
       styleNav,
+      store,
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+header {
+  z-index: 10;
+}
 nav {
   padding: 30px;
 

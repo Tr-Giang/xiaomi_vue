@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+  .banner__item .banner__item__content {
+    top: 0;
+    left: 50%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .banner__item .banner__item__content h2 {
+    font-size: 3.2rem;
+    font-weight: 400;
+  }
+  .banner__item .banner__item__content h2 span {
+    font-size: 2.8rem;
+  }
+  .banner__item .banner__item__content h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}

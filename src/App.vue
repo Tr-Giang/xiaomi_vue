@@ -4,11 +4,19 @@
 
     <router-view />
     <footer-mi></footer-mi>
-    <div class="overlay"></div>
+    <div class="overlay" :class="{ 'overlay--open': store.isOverlay }"></div>
   </div>
 </template>
 
-<script></script>
+<script>
+import { useHeaderStore } from "./stores/HeaderStore";
+export default {
+  setup() {
+    const store = useHeaderStore();
+    return { store };
+  },
+};
+</script>
 
 <style lang="scss">
 #app {

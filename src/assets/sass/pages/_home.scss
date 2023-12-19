@@ -4,37 +4,6 @@ main {
 }
 
 .banner {
-  .banner__item {
-    height: 45rem;
-    margin-bottom: 1.6rem;
-    position: relative;
-    img {
-      object-fit: cover;
-      height: 100%;
-    }
-    .banner__item__content {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-
-      h2 {
-        margin: 0;
-        font-size: 4.4rem;
-        color: $text-color4;
-        font-family: "Lexend Deca", sans-serif;
-        span {
-          font-size: 3.2rem;
-        }
-      }
-
-      h3 {
-        margin-bottom: 2rem;
-        font-size: 2.4rem;
-        color: $text-color4;
-      }
-    }
-  }
 }
 
 .product {
@@ -83,28 +52,26 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-  .banner {
-    .banner__item {
-      .banner__item__content {
-        top: 0;
-        left: 50%;
-        width: max-content;
-        transform: translateX(-50%);
-        padding: 4rem 1rem;
-        text-align: center;
+  .banner__item {
+    .banner__item__content {
+      top: 0;
+      left: 50%;
+      width: max-content;
+      transform: translateX(-50%);
+      padding: 4rem 1rem;
+      text-align: center;
 
-        h2 {
-          font-size: 3.2rem;
-          font-weight: 400;
-          span {
-            font-size: 2.8rem;
-          }
+      h2 {
+        font-size: 3.2rem;
+        font-weight: 400;
+        span {
+          font-size: 2.8rem;
         }
+      }
 
-        h3 {
-          font-size: 1.6rem;
-          font-weight: 400;
-        }
+      h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
       }
     }
   }
