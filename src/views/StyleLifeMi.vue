@@ -2,10 +2,83 @@
   <div id="all">
     <div class="container-fluid">
       <main>
-        <main-show-mi id="media">
+        <carousel-mi>
+          <template #banner1>
+            <banner-text-mi-dark
+              :customStyle="{ textAlign: 'left' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/life_style/banner/banner1.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/life_style/banner/banner11.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>RedmiBook 15</template>
+              <template #desc
+                >Chiếc máy tính có thể tiếp sức sáng tạo cho bạn</template
+              >
+            </banner-text-mi-dark>
+          </template>
+          <template #banner2>
+            <banner-text-mi-dark
+              :customStyle="{ textAlign: 'left' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/life_style/banner/banner2.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/life_style/banner/banner21.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>Xiaomi Smart Band 8</template>
+              <template #desc>Thể thao kết hợp với phong cách</template>
+            </banner-text-mi-dark>
+          </template>
+          <template #banner3>
+            <banner-text-mi
+              :customStyle="{ textAlign: 'left', fontSize: '2rem' }"
+              :style="{ marginBottom: '0rem' }"
+            >
+              <template #image1>
+                <img
+                  src="../assets/images/life_style/banner/banner3.webp"
+                  class="d-none d-md-block w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #image2>
+                <img
+                  src="../assets/images/life_style/banner/banner31.webp"
+                  class="d-block d-md-none w-100"
+                  alt="banner"
+                />
+              </template>
+              <template #header>Xiaomi Buds 3T Pro</template>
+              <template #desc>Nhịp điệu say đắm, âm thanh diệu kỳ</template>
+            </banner-text-mi>
+          </template>
+        </carousel-mi>
+        <main-show-mi id="thietbideo">
           <template #header>
             <main-show-header>
-              <template #heading>TV & phương tiện</template>
+              <template #heading>Thiết bị đeo</template>
             </main-show-header>
           </template>
 
@@ -13,78 +86,72 @@
             <products-show2>
               <template #product1>
                 <product-mi>
-                  <template #header>Xiaomi TV A 43 FHD</template>
-                  <template #desc>Muôn Góc Nhìn, Vạn Trải Nghiệm</template>
+                  <template #header>Xiaomi Smart Band 8</template>
+                  <template #desc> Thể thao kết hợp với phong cách</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/tv1.png"
-                      alt="Xiaomi TV A 43 FHD"
+                      src="../assets/images/life_style/wearables/band8.webp"
+                      alt="Xiaomi Smart Band 8"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product2>
                 <product-mi>
-                  <template #header>Xiaomi TV A Pro 65</template>
-                  <template #desc>Muôn Góc Nhìn, Vạn Trải Nghiệm</template>
+                  <template #header>Xiaomi Watch 2 Pro</template>
+                  <template #desc> Thông minh hơn sau mỗi lần đeo</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/tv2.png"
-                      alt="Xiaomi TV A Pro 65"
+                      src="../assets/images/life_style/wearables/watch2.webp"
+                      alt="Xiaomi Watch 2 Pro"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product3>
                 <product-mi>
-                  <template #header>Xiaomi TV A2 58"</template>
-                  <template #desc
-                    >Cuộc sống tiện nghi, tầm nhìn vô hạn</template
-                  >
+                  <template #header>Xiaomi Smart Band 8 Active</template>
+                  <template #desc> Kích hoạt một ngày của bạn</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/iv3.png"
-                      alt="Xiaomi TV A2 58"
+                      src="../assets/images/life_style/wearables/ban8a.webp"
+                      alt="Xiaomi Smart Band 8 Active"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product4>
                 <product-mi>
-                  <template #header>Xiaomi TV A2 32"</template>
-                  <template #desc
-                    >Cuộc sống tiện nghi, tầm nhìn vô hạn</template
-                  >
+                  <template #header>Xiaomi Buds 4 Pro"</template>
+                  <template #desc> Sống động dưới mọi hình thức</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/iv3.png"
-                      alt="Xiaomi TV A2 32"
+                      src="../assets/images/life_style/wearables/pod1.png"
+                      alt="Xiaomi Buds 4 Pro"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product5>
                 <product-mi>
-                  <template #header
-                    >Mi Portable Bluetooth Speaker (16W)</template
-                  >
-                  <template #desc>ĐƯA ÂM NHẠC VÀO ĐỜI SỐNG</template>
+                  <template #header>Redmi Buds 4 Pro</template>
+                  <template #desc>Âm thanh như bạn mong muốn</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/speaker.png"
-                      alt="Mi Portable Bluetooth Speaker (16W)"
+                      src="../assets/images/life_style/wearables/pod4.png"
+                      alt="Redmi Buds 4 Pro"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product6>
                 <product-mi>
-                  <template #header>Mi Smart Projector 2</template>
-                  <template #desc>Rạp hát tại gia di động của bạn</template>
+                  <template #header>Xiaomi Watch S1 Pro</template>
+                  <template #desc>Chiếc đồng hồ cổ điển</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/tv/projector.png"
-                      alt="Mi Portable Bluetooth Speaker (16W)"
+                      src="../assets/images/life_style/wearables/watch1.png"
+                      alt="Xiaomi Watch S1 Pro"
                       class="product__item__img"
                   /></template>
                 </product-mi>
@@ -92,232 +159,254 @@
             </products-show2>
           </template>
         </main-show-mi>
-        <main-show-mi id="cleaner">
+        <main-show-mi id="vanphong">
           <template #header>
             <main-show-header>
-              <template #heading>Máy hút bụi</template>
+              <template #heading>Văn phòng</template>
             </main-show-header>
           </template>
           <template #default>
-            <products-show>
+            <products-show2>
               <template #product1>
                 <product-mi>
-                  <template #header>Xiaomi Robot Vacuum S10+</template>
+                  <template #header>Mi AIoT Router AX3600</template>
                   <template #desc
-                    >Lau sàn bằng áp suất với hai giẻ lau để loại bỏ vết bẩn tốt
+                    >Wi-Fi 6 là bộ định tuyến 5G đầu tiên trên thế
+                    giới</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/wifi1.png"
+                      alt="Mi AIoT Router AX3600"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product2>
+                <product-mi>
+                  <template #header>Mi Router 4A Gigabit Edition</template>
+                  <template #desc
+                    >Bộ định tuyến AC1200 Gigabit đầy đủ lõi kép</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/wifi2.png"
+                      alt="Mi Router 4A Gigabit Edition"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product3>
+                <product-mi>
+                  <template #header>Mi Router 4C (White)</template>
+                  <template #desc
+                    >Bốn ăng-ten đa hướng cho trải nghiệm nhanh hơn và thông
+                    minh hơn</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/wifi1.png"
+                      alt="Mi Router 4C (White)"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product4>
+                <product-mi>
+                  <template #header>Xiaomi Pad 5</template>
+                  <template #desc> Chơi chất, làm chất</template>
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/pad1.png"
+                      alt="Xiaomi Pad 5"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product5>
+                <product-mi>
+                  <template #header>RedmiBook 15</template>
+                  <template #desc
+                    >Chiếc máy tính có thể tiếp sức sáng tạo cho bạn</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/lap1.png"
+                      alt="RedmiBook 15"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product6>
+                <product-mi>
+                  <template #header>Redmi Pad</template>
+                  <template #desc
+                    >Pad đa năng trong tay, niềm vui trong tầm với</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/office/pad2.png"
+                      alt="Redmi Pad"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+            </products-show2>
+          </template>
+        </main-show-mi>
+        <main-show-mi id="thethao">
+          <template #header>
+            <main-show-header>
+              <template #heading>Thể thao</template>
+            </main-show-header>
+          </template>
+
+          <template #default>
+            <div class="product">
+              <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                  <product-mi>
+                    <template #header>Mi Body Composition Scale 2</template>
+                    >
+                    <template #image
+                      ><img
+                        src="../assets/images/life_style/sport/sport1.png"
+                        alt="Mi Body Composition Scale 2"
+                        class="product__item__img"
+                    /></template>
+                  </product-mi>
+                </div>
+                <div class="col">
+                  <product-mi>
+                    <template #header>Mi Smart Scale 2</template>
+                    <template #desc
+                      >Đủ chính xác để phát hiện bạn vừa uống một ly
+                      nước</template
+                    >
+                    <template #image
+                      ><img
+                        src="../assets/images/life_style/sport/sport2.png"
+                        alt="Mi Smart Scale 2"
+                        class="product__item__img"
+                    /></template>
+                  </product-mi>
+                </div>
+              </div>
+            </div>
+          </template>
+        </main-show-mi>
+        <main-show-mi id="phukien">
+          <template #header>
+            <main-show-header>
+              <template #heading>Phụ kiện</template>
+            </main-show-header>
+          </template>
+          <template #default>
+            <products-show3>
+              <template #product1>
+                <product-mi>
+                  <template #header>Xiaomi 22.5W Power Bank 10000</template>
+                  <template #desc
+                    >Vỏ kim loại chắc chắn, khả năng sạc mạnh mẽ</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/accessory/power1.webp"
+                      alt="Xiaomi 22.5W Power Bank 10000"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product2>
+                <product-mi>
+                  <template #header
+                    >Xiaomi Wireless Keyboard and Mouse</template
+                  >
+                  <template #desc
+                    >Tận hưởng năng suất làm việc không dây</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/accessory/mourse1.webp"
+                      alt="Xiaomi Wireless Keyboard and Mouse"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product3>
+                <product-mi>
+                  <template #header>Xiaomi Wireless Mouse Lite</template>
+                  <template #desc
+                    >Đơn giản và gọn nhẹ, không còn bị dây nối ràng
+                    buộc</template
+                  >
+                  <template #image
+                    ><img
+                      src="../assets/images/life_style/accessory/mourse2.webp"
+                      alt="Xiaomi Wireless Mouse Lite"
+                      class="product__item__img"
+                  /></template>
+                </product-mi>
+              </template>
+              <template #product4>
+                <product-mi>
+                  <template #header>Mi Dual Mode Wireless Mouse</template>
+                  <template #desc
+                    >Người bạn đồng hành thầm lặng giúp bạn đạt năng suất cao
                     hơn</template
                   >
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/clearner/clearner1.png"
-                      alt="Xiaomi Robot Vacuum S10+"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product2>
-                <product-mi>
-                  <template #header>Xiaomi Robot Vacuum X10+</template>
-                  <template #desc>Dọn sạch tối ưu, tự động hóa tối đa</template>
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/clearner/clearner2.png"
-                      alt="Xiaomi Robot Vacuum X10+"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product3>
-                <product-mi>
-                  <template #header
-                    >Xiaomi Truclean W10 Ultra Wet Dry Vacuum</template
-                  >
-                  <template #desc>Làm sạch hoàn toàn trong một lần</template>
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/clearner/cleaner3.png"
-                      alt="Xiaomi Truclean W10 Ultra Wet Dry Vacuum"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product4>
-                <product-mi>
-                  <template #header>Xiaomi Robot Vacuum E10</template>
-                  <template #desc>Chuyên gia vệ sinh sàn linh hoạt</template>
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/clearner/cleaner4.png"
-                      alt="Xiaomi Robot Vacuum E10"
+                      src="../assets/images/life_style/accessory/mourse3.webp"
+                      alt="Mi Dual Mode Wireless Mouse"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product5>
                 <product-mi>
-                  <template #header>Xiaomi Vacuum Cleaner G9 Plus</template>
+                  <template #header>Xiaomi 33W Power Bank 10000mAh</template>
                   <template #desc
-                    >Máy đa chức năng để loại bỏ sâu bụi bẩn với nhiều chế độ
-                    cài đặt</template
+                    >Nhẹ và nhỏ gọn, vừa vặn trong túi của bạn</template
                   >
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/clearner/cleaner5.png"
-                      alt="Xiaomi Vacuum Cleaner G9 Plus"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-            </products-show>
-          </template>
-        </main-show-mi>
-        <main-show-mi id="thietbimoitruong">
-          <template #header>
-            <main-show-header>
-              <template #heading>Thiết bị môi trường</template>
-            </main-show-header>
-          </template>
-
-          <template #default>
-            <products-show2>
-              <template #product1>
-                <product-mi>
-                  <template #header>Xiaomi Smart Air Purifier 4 Pro</template>
-                  <template #desc>Hít khí sạch, hô hấp khỏe</template>
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/smart_air/air1.png"
-                      alt="Xiaomi Smart Air Purifier 4 Pro"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product2>
-                <product-mi>
-                  <template #header
-                    >Xiaomi Smart Air Purifier 4 Compact</template
-                  >
-                  <template #desc>
-                    Mang không khí sạch đến nơi bạn cần</template
-                  >
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/smart_air/air2.png"
-                      alt="Xiaomi Smart Air Purifier 4 Compact"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product3>
-                <product-mi>
-                  <template #header>Mi Smart Standing Fan 2 Lite</template>
-                  <template #desc
-                    >Điều khiển mức gió thông minh bằng giọng nói</template
-                  >
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/smart_air/air3.png"
-                      alt="Mi Smart Standing Fan 2 Lite"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product4>
-                <product-mi>
-                  <template #header>Xiaomi Smart Air Purifier 4</template>
-                  <template #desc> Hít khí sạch, hô hấp khỏe</template>
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/smart_air/air4.png"
-                      alt="Xiaomi Smart Air Purifier 4"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product5>
-                <product-mi>
-                  <template #header>Mi Smart Standing Fan 2</template>
-                  <template #desc
-                    >Cánh quạt kép mang đến làn gió mát tự nhiên</template
-                  >
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/smart_air/air5.jpg"
-                      alt="Mi Smart Standing Fan 2"
+                      src="../assets/images/life_style/accessory/power2.webp"
+                      alt="Xiaomi 33W Power Bank 10000mAh"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
               <template #product6>
                 <product-mi>
-                  <template #header>Xiaomi Rechargeable Mini Fan</template>
+                  <template #header>Mi 65W Fast Charger with GaN Tech</template>
                   <template #desc
-                    >Một chiếc quạt không dây bền bỉ mang đến làn gió mát ở mọi
-                    nơi.</template
+                    >Công nghệ gali nitrua tuyệt vời, sạc nhanh công suất cao
+                    65W MAX</template
                   >
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/smart_air/air6.png"
-                      alt="Xiaomi Rechargeable Mini Fan"
+                      src="../assets/images/life_style/accessory/charger1.webp"
+                      alt="Mi 65W Fast Charger with GaN Tech"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
-            </products-show2>
-          </template>
-        </main-show-mi>
-        <main-show-mi id="thietbithongminh">
-          <template #header>
-            <main-show-header>
-              <template #heading>Thiết bị thông minh</template>
-            </main-show-header>
-          </template>
-          <template #default>
-            <products-show>
-              <template #product3>
+              <template #product7>
                 <product-mi>
-                  <template #header>Mi Camera 2K Magnetic Mount</template>
-                  <template #desc
-                    >Thiết kế nhỏ gọn, hình ảnh 2K siêu nét</template
+                  <template #header
+                    >Mi 33W Wall Charger (Type-A + Type-C)</template
                   >
+                  <template #desc>Sạc nhanh và mạnh mẽ</template>
                   <template #image
                     ><img
-                      src="../assets/images/smart_home/camera/camera1.png"
-                      alt="Mi Camera 2K Magnetic Mount"
+                      src="../assets/images/life_style/accessory/charger2.webp"
+                      alt="Mi 33W Wall Charger (Type-A + Type-C)"
                       class="product__item__img"
                   /></template>
                 </product-mi>
               </template>
-              <template #product4>
-                <product-mi>
-                  <template #header>Mi 360° Home Security Camera 2K</template>
-                  <template #desc
-                    >Chất lượng hình ảnh 2K cực rõ, AI đã được nâng
-                    cấp</template
-                  >
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/camera/camera2.jpg"
-                      alt="Mi 360° Home Security Camera 2K"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-              <template #product5>
-                <product-mi>
-                  <template #header>Xiaomi Smart Camera C400</template>
-                  <template #desc
-                    >Bảo mật thông minh với độ rõ nét 2,5K</template
-                  >
-                  <template #image
-                    ><img
-                      src="../assets/images/smart_home/camera/camera3.png"
-                      alt="Xiaomi Smart Camera C400"
-                      class="product__item__img"
-                  /></template>
-                </product-mi>
-              </template>
-            </products-show>
+            </products-show3>
           </template>
         </main-show-mi>
       </main>
@@ -329,4 +418,8 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.banner__item__content {
+  text-align: left;
+}
+</style>

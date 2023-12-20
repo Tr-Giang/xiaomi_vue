@@ -13,10 +13,14 @@ export const useHeaderStore = defineStore("header", {
   },
   actions: {
     openOverlay() {
-      this.isOverlay = true;
+      if (!this.isPhone) {
+        this.isOverlay = true;
+      }
     },
     closeOverlay() {
-      this.isOverlay = false;
+      if (!this.isPhone) {
+        this.isOverlay = false;
+      }
     },
   },
 });

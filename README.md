@@ -33,3 +33,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 7/12: đang nghiên cứu về sử dụng props và pinia trong các subnav của header.
 16/12: việc tiếp theo: hoàn thành nốt page syle life và fix đoạn bug chỗ header khi ở screen phone.
 19/12: hoàn thành navbar vs smart house
+20/12: Done style-life, tiếp theo làm details
